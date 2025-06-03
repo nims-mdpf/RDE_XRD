@@ -11,6 +11,8 @@ RDE (Research Data Express) は、物質・材料についての研究データ�
 
 RDE_XRDデータセットテンプレートは、XRD手法で測定されたデータ用のものです。
 
+機能などについては[ガイド](guide.md)を参照してください。
+
 詳細は[docs/manual/index.md](docs/manual/index.md)を参照してください。
 
 RDEToolKitを用いて作成されています。
