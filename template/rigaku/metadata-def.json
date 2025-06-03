@@ -1,0 +1,866 @@
+{
+    "ras.comment": {
+        "name": {
+            "ja": "コメント",
+            "en": "Comment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.memo": {
+        "name": {
+            "ja": "メモ",
+            "en": "Memo"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.measurement_operator": {
+        "name": {
+            "ja": "測定実施者",
+            "en": "Measurement Operator"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.specimen": {
+        "name": {
+            "ja": "試料",
+            "en": "Specimen"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.detector_pixel_size": {
+        "name": {
+            "ja": "検出器ピクセルサイズ",
+            "en": "Detector Pixel Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "mm",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.selected_detector_name": {
+        "name": {
+            "ja": "使用検出器名称",
+            "en": "Selected Detector Name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.x-ray_target_material": {
+        "name": {
+            "ja": "X線ターゲットの材質",
+            "en": "X-ray Target Material"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.k_alpha_1_wavelength": {
+        "name": {
+            "ja": "K_alpha1の波長",
+            "en": "K_alpha_1 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "Angstrom",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.k_alpha_2_wavelength": {
+        "name": {
+            "ja": "K_alpha2の波長",
+            "en": "K_alpha_2 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "Angstrom",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.k_beta_wavelength": {
+        "name": {
+            "ja": "K_betaの波長",
+            "en": "K_beta Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "Angstrom",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.optics_attribute": {
+        "name": {
+            "ja": "光学系属性",
+            "en": "Optics Attribute"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.x-ray_tube_current": {
+        "name": {
+            "ja": "X線管電流",
+            "en": "X-ray Tube Current"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$HW_XG_CURRENT_UNIT",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.x-ray_tube_voltage": {
+        "name": {
+            "ja": "X線管電圧",
+            "en": "X-ray Tube Voltage"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$HW_XG_VOLTAGE_UNIT",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.wavelength_type": {
+        "name": {
+            "ja": "波長タイプ",
+            "en": "Wavelength Type"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.data_point_number": {
+        "name": {
+            "ja": "データ点数",
+            "en": "Data Point Number"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_axis": {
+        "name": {
+            "ja": "スキャン軸",
+            "en": "Scan Axis"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_starting_date_time": {
+        "name": {
+            "ja": "スキャン開始時刻",
+            "en": "Scan Starting Date Time"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_ending_date_time": {
+        "name": {
+            "ja": "スキャン終了時刻",
+            "en": "Scan Ending Date Time"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_mode": {
+        "name": {
+            "ja": "スキャンモード",
+            "en": "Scan Mode"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_speed": {
+        "name": {
+            "ja": "スキャンスピード",
+            "en": "Scan Speed"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$MEAS_SCAN_SPEED_UNIT",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_step_size": {
+        "name": {
+            "ja": "スキャンステップサイズ",
+            "en": "Scan Step Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$MEAS_SCAN_UNIT_X",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_starting_position": {
+        "name": {
+            "ja": "スキャン開始位置",
+            "en": "Scan Starting Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$MEAS_SCAN_UNIT_X",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_ending_position": {
+        "name": {
+            "ja": "スキャン終了位置",
+            "en": "Scan Ending Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$MEAS_SCAN_UNIT_X",
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.scan_axis_unit": {
+        "name": {
+            "ja": "スキャン軸の単位",
+            "en": "Scan Axis Unit"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "ras.intensity_unit": {
+        "name": {
+            "ja": "強度の単位",
+            "en": "Intensity Unit"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "ras形式",
+        "variable": 1
+    },
+    "rasx.comment": {
+        "name": {
+            "ja": "コメント",
+            "en": "Comment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.memo": {
+        "name": {
+            "ja": "メモ",
+            "en": "Memo"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.measurement_operator": {
+        "name": {
+            "ja": "測定実施者",
+            "en": "Measurement Operator"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.specimen": {
+        "name": {
+            "ja": "試料",
+            "en": "Specimen"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.detector_pixel_size": {
+        "name": {
+            "ja": "検出器ピクセルサイズ",
+            "en": "Detector Pixel Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.selected_detector_name": {
+        "name": {
+            "ja": "使用検出器名称",
+            "en": "Selected Detector Name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.x-ray_target_material": {
+        "name": {
+            "ja": "X線ターゲットの材質",
+            "en": "X-ray Target Material"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.k_alpha_1_wavelength": {
+        "name": {
+            "ja": "K_alpha1の波長",
+            "en": "K_alpha_1 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "Angstrom",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.k_alpha_2_wavelength": {
+        "name": {
+            "ja": "K_alpha2の波長",
+            "en": "K_alpha_2 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "Angstrom",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.k_beta_wavelength": {
+        "name": {
+            "ja": "K_betaの波長",
+            "en": "K_beta Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "Angstrom",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.optics_attribute": {
+        "name": {
+            "ja": "光学系属性",
+            "en": "Optics Attribute"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.x-ray_tube_current": {
+        "name": {
+            "ja": "X線管電流",
+            "en": "X-ray Tube Current"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$CurrentUnit",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.x-ray_tube_voltage": {
+        "name": {
+            "ja": "X線管電圧",
+            "en": "X-ray Tube Voltage"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$VoltageUnit",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.wavelength_type": {
+        "name": {
+            "ja": "波長タイプ",
+            "en": "Wavelength Type"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.data_point_number": {
+        "name": {
+            "ja": "データ点数",
+            "en": "Data Point Number"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_axis": {
+        "name": {
+            "ja": "スキャン軸",
+            "en": "Scan Axis"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_starting_date_time": {
+        "name": {
+            "ja": "スキャン開始時刻",
+            "en": "Scan Starting Date Time"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_ending_date_time": {
+        "name": {
+            "ja": "スキャン終了時刻",
+            "en": "Scan Ending Date Time"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_mode": {
+        "name": {
+            "ja": "スキャンモード",
+            "en": "Scan Mode"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_speed": {
+        "name": {
+            "ja": "スキャンスピード",
+            "en": "Scan Speed"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$SpeedUnit",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_step_size": {
+        "name": {
+            "ja": "スキャンステップサイズ",
+            "en": "Scan Step Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$PositionUnit",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_starting_position": {
+        "name": {
+            "ja": "スキャン開始位置",
+            "en": "Scan Starting Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$PositionUnit",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_ending_position": {
+        "name": {
+            "ja": "スキャン終了位置",
+            "en": "Scan Ending Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "$PositionUnit",
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.scan_axis_unit": {
+        "name": {
+            "ja": "スキャン軸の単位",
+            "en": "Scan Axis Unit"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "rasx.intensity_unit": {
+        "name": {
+            "ja": "強度の単位",
+            "en": "Intensity Unit"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "rasx形式",
+        "variable": 1
+    },
+    "txt.comment": {
+        "name": {
+            "ja": "コメント",
+            "en": "Comment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.specimen": {
+        "name": {
+            "ja": "試料",
+            "en": "Specimen"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.selected_detector_name": {
+        "name": {
+            "ja": "使用検出器名称",
+            "en": "Selected Detector Name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.x-ray_tube_current": {
+        "name": {
+            "ja": "X線管電流",
+            "en": "X-ray Tube Current"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mA",
+        "variable": 1
+    },
+    "txt.x-ray_tube_voltage": {
+        "name": {
+            "ja": "X線管電圧",
+            "en": "X-ray Tube Voltage"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "kV",
+        "variable": 1
+    },
+    "txt.scan_axis": {
+        "name": {
+            "ja": "スキャン軸",
+            "en": "Scan Axis"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.scan_starting_date_time": {
+        "name": {
+            "ja": "スキャン開始時刻",
+            "en": "Scan Starting Date Time"
+        },
+        "schema": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.scan_ending_date_time": {
+        "name": {
+            "ja": "スキャン終了時刻",
+            "en": "Scan Ending Date Time"
+        },
+        "schema": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.scan_mode": {
+        "name": {
+            "ja": "スキャンモード",
+            "en": "Scan Mode"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.scan_speed": {
+        "name": {
+            "ja": "スキャンスピード",
+            "en": "Scan Speed"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg/min",
+        "variable": 1
+    },
+    "txt.scan_step_size": {
+        "name": {
+            "ja": "スキャンステップサイズ",
+            "en": "Scan Step Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "variable": 1
+    },
+    "txt.scan_starting_position": {
+        "name": {
+            "ja": "スキャン開始位置",
+            "en": "Scan Starting Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "variable": 1
+    },
+    "txt.scan_ending_position": {
+        "name": {
+            "ja": "スキャン終了位置",
+            "en": "Scan Ending Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "variable": 1
+    },
+    "txt.attachment": {
+        "name": {
+            "ja": "付属試料台",
+            "en": "Attachment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.monochromator": {
+        "name": {
+            "ja": "分光器",
+            "en": "Monochromator"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "variable": 1
+    },
+    "txt.incidentbeampath_divergence_slit_width（angle)": {
+        "name": {
+            "ja": "入射光_発散スリット幅（角度）",
+            "en": "incidentBeamPath_divergence slit width（angle)"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "variable": 1
+    },
+    "txt.diffractedbeampath_anti-scatter_slit_width": {
+        "name": {
+            "ja": "出射光_散乱スリット幅",
+            "en": "diffractedBeamPath_anti-scatter slit width"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mm",
+        "variable": 1
+    },
+    "txt.diffractedbeampath_receiving_slit_width": {
+        "name": {
+            "ja": "出射光_受光スリット幅",
+            "en": "diffractedBeamPath_receiving slit width"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mm",
+        "variable": 1
+    },
+    "txt.incidenting_slit": {
+        "name": {
+            "ja": "入射スリット",
+            "en": "incidenting slit"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "variable": 1
+    },
+    "txt.receiving_slit_1": {
+        "name": {
+            "ja": "受光スリット1",
+            "en": "receiving slit 1"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mm",
+        "variable": 1
+    },
+    "txt.receiving_slit_2": {
+        "name": {
+            "ja": "受光スリット2",
+            "en": "receiving slit 2"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mm",
+        "variable": 1
+    },
+    "main_image_setting": {
+        "name": {
+            "ja": "代表画像の設定",
+            "en": "Main Image Setting"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_axis_x": {
+        "name": {
+            "ja": "X軸ラベル(名称)",
+            "en": "Measurement scan axis X"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_unit_x": {
+        "name": {
+            "ja": "X軸ラベル(単位)",
+            "en": "Measurement scan unit X"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_axis_y": {
+        "name": {
+            "ja": "Y軸ラベル(名称)",
+            "en": "Measurement scan axis Y"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_unit_y": {
+        "name": {
+            "ja": "Y軸ラベル(単位)",
+            "en": "Measurement scan unit Y"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    }
+}

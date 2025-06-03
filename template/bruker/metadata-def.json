@@ -1,0 +1,209 @@
+{
+    "uxd.comment": {
+        "name": {
+            "ja": "コメント",
+            "en": "Comment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.selected_detector_name": {
+        "name": {
+            "ja": "使用検出器名称",
+            "en": "Selected Detector Name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.x-ray_target_material": {
+        "name": {
+            "ja": "X線ターゲットの材質",
+            "en": "X-ray Target Material"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.k_alpha_1_wavelength": {
+        "name": {
+            "ja": "K_alpha1の波長",
+            "en": "K_alpha_1 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.k_alpha_2_wavelength": {
+        "name": {
+            "ja": "K_alpha2の波長",
+            "en": "K_alpha_2 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.ratio_k_alpha_2/k_alpha_1": {
+        "name": {
+            "ja": "K_alpha2/K_alpha1の比率",
+            "en": "Ratio K_Alpha_2/K_Alpha_1"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.x-ray_tube_current": {
+        "name": {
+            "ja": "X線管電流",
+            "en": "X-ray Tube Current"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "mA",
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.x-ray_tube_voltage": {
+        "name": {
+            "ja": "X線管電圧",
+            "en": "X-ray Tube Voltage"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "kV",
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.scan_mode": {
+        "name": {
+            "ja": "スキャンモード",
+            "en": "Scan Mode"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.scan_step_size": {
+        "name": {
+            "ja": "スキャンステップサイズ",
+            "en": "Scan Step Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.scan_starting_position": {
+        "name": {
+            "ja": "スキャン開始位置",
+            "en": "Scan Starting Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.monochromator": {
+        "name": {
+            "ja": "分光器",
+            "en": "Monochromator"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.aperture_width_of_1d_position_sensitive_detector(deg)": {
+        "name": {
+            "ja": "1次元検出器 開口幅（度）",
+            "en": "Aperture width of 1D Position Sensitive Detector(deg)"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "unit": "deg",
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "uxd.measurement_instrument_name": {
+        "name": {
+            "ja": "測定装置名",
+            "en": "Measurement Instrument name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "uxd形式",
+        "variable": 1
+    },
+    "main_image_setting": {
+        "name": {
+            "ja": "代表画像の設定",
+            "en": "Main Image Setting"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_axis_x": {
+        "name": {
+            "ja": "X軸ラベル(名称)",
+            "en": "Measurement scan axis X"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_unit_x": {
+        "name": {
+            "ja": "X軸ラベル(単位)",
+            "en": "Measurement scan unit X"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_axis_y": {
+        "name": {
+            "ja": "Y軸ラベル(名称)",
+            "en": "Measurement scan axis Y"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    },
+    "meas_scan_unit_y": {
+        "name": {
+            "ja": "Y軸ラベル(単位)",
+            "en": "Measurement scan unit Y"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "variable": 1
+    }
+}

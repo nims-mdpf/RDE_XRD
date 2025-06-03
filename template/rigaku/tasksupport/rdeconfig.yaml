@@ -1,0 +1,13 @@
+system:
+  # extended_mode: MultiDataTile
+  magic_variable: true
+  save_thumbnail_image: true
+
+xrd:
+  filename_mapping_rule: true
+  manufacturer: rigaku
+  main_image_setting:
+  meas_scan_axis_x:
+  meas_scan_unit_x:
+  meas_scan_axis_y:
+  meas_scan_unit_y:

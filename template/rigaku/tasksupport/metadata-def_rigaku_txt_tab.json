@@ -1,0 +1,229 @@
+{
+    "txt.comment": {
+        "name": {
+            "ja": "コメント",
+            "en": "Comment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "Comments",
+        "variable": 1
+    },
+    "txt.specimen": {
+        "name": {
+            "ja": "試料",
+            "en": "Specimen"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "Sample",
+        "variable": 1
+    },
+    "txt.selected_detector_name": {
+        "name": {
+            "ja": "使用検出器名称",
+            "en": "Selected Detector Name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "Goniometer",
+        "variable": 1
+    },
+    "txt.x-ray_tube_current": {
+        "name": {
+            "ja": "X線管電流",
+            "en": "X-ray Tube Current"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mA",
+        "originalName": "X-Ray",
+        "variable": 1
+    },
+    "txt.x-ray_tube_voltage": {
+        "name": {
+            "ja": "X線管電圧",
+            "en": "X-ray Tube Voltage"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "kV",
+        "originalName": "X-Ray",
+        "variable": 1
+    },
+    "txt.scan_axis": {
+        "name": {
+            "ja": "スキャン軸",
+            "en": "Scan Axis"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "ScanningMode",
+        "variable": 1
+    },
+    "txt.scan_starting_date_time": {
+        "name": {
+            "ja": "スキャン開始時刻",
+            "en": "Scan Starting Date Time"
+        },
+        "schema": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "mode": "txt形式",
+        "originalName": "StartTime",
+        "variable": 1
+    },
+    "txt.scan_ending_date_time": {
+        "name": {
+            "ja": "スキャン終了時刻",
+            "en": "Scan Ending Date Time"
+        },
+        "schema": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "mode": "txt形式",
+        "originalName": "StopTime",
+        "variable": 1
+    },
+    "txt.scan_mode": {
+        "name": {
+            "ja": "スキャンモード",
+            "en": "Scan Mode"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "ScanningType",
+        "variable": 1
+    },
+    "txt.scan_speed": {
+        "name": {
+            "ja": "スキャンスピード",
+            "en": "Scan Speed"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg/min",
+        "originalName": "Speed",
+        "variable": 1
+    },
+    "txt.scan_step_size": {
+        "name": {
+            "ja": "スキャンステップサイズ",
+            "en": "Scan Step Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "originalName": "Step",
+        "variable": 1
+    },
+    "txt.scan_starting_position": {
+        "name": {
+            "ja": "スキャン開始位置",
+            "en": "Scan Starting Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "originalName": "Start",
+        "variable": 1
+    },
+    "txt.scan_ending_position": {
+        "name": {
+            "ja": "スキャン終了位置",
+            "en": "Scan Ending Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "originalName": "Stop",
+        "variable": 1
+    },
+    "txt.attachment": {
+        "name": {
+            "ja": "付属試料台",
+            "en": "Attachment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "Attachment",
+        "variable": 1
+    },
+    "txt.monochromator": {
+        "name": {
+            "ja": "分光器",
+            "en": "Monochromator"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "mode": "txt形式",
+        "originalName": "Monochromater",
+        "variable": 1
+    },
+    "txt.incidentbeampath_divergence_slit_width（angle)": {
+        "name": {
+            "ja": "入射光_発散スリット幅（角度）",
+            "en": "incidentBeamPath_divergence slit width（angle)"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "deg",
+        "originalName": "DS",
+        "variable": 1
+    },
+    "txt.diffractedbeampath_anti-scatter_slit_width": {
+        "name": {
+            "ja": "出射光_散乱スリット幅",
+            "en": "diffractedBeamPath_anti-scatter slit width"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mm",
+        "originalName": "SS",
+        "variable": 1
+    },
+    "txt.diffractedbeampath_receiving_slit_width": {
+        "name": {
+            "ja": "出射光_受光スリット幅",
+            "en": "diffractedBeamPath_receiving slit width"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "mode": "txt形式",
+        "unit": "mm",
+        "originalName": "RS",
+        "variable": 1
+    }
+}
