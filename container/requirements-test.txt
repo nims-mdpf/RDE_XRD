@@ -1,0 +1,13 @@
+-r requirements.txt
+black
+flake8
+pyproject-flake8
+isort
+lizard
+mypy
+pytest
+pytest-cov
+pytest-mock
+tox
+types-python-dateutil
+ruff

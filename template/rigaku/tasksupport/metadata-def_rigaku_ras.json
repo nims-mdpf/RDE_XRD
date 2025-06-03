@@ -1,0 +1,392 @@
+{
+    "ras.specimen": {
+        "name": {
+            "ja": "試料",
+            "en": "Specimen"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 1,
+        "mode": "ras形式",
+        "originalName": "FILE_SAMPLE",
+        "variable": 1
+    },
+    "ras.comment": {
+        "name": {
+            "ja": "コメント",
+            "en": "Comment"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 2,
+        "mode": "ras形式",
+        "originalName": "FILE_COMMENT",
+        "variable": 1
+    },
+    "ras.selected_detector_name": {
+        "name": {
+            "ja": "使用検出器名称",
+            "en": "Selected Detector Name"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 3,
+        "mode": "ras形式",
+        "originalName": "HW_COUNTER_SELECT_NAME",
+        "variable": 1
+    },
+    "ras.scan_axis": {
+        "name": {
+            "ja": "スキャン軸",
+            "en": "Scan Axis"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 4,
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_AXIS_X",
+        "variable": 1
+    },
+    "ras.scan_mode": {
+        "name": {
+            "ja": "スキャンモード",
+            "en": "Scan Mode"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 5,
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_MODE",
+        "variable": 1
+    },
+    "ras.x-ray_tube_current": {
+        "name": {
+            "ja": "X線管電流",
+            "en": "X-ray Tube Current"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 6,
+        "unit": "$HW_XG_CURRENT_UNIT",
+        "mode": "ras形式",
+        "originalName": "MEAS_COND_XG_CURRENT",
+        "variable": 1
+    },
+    "ras.x-ray_tube_voltage": {
+        "name": {
+            "ja": "X線管電圧",
+            "en": "X-ray Tube Voltage"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 7,
+        "unit": "$HW_XG_VOLTAGE_UNIT",
+        "mode": "ras形式",
+        "originalName": "MEAS_COND_XG_VOLTAGE",
+        "variable": 1
+    },
+    "ras.scan_starting_position": {
+        "name": {
+            "ja": "スキャン開始位置",
+            "en": "Scan Starting Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 8,
+        "unit": "$MEAS_SCAN_UNIT_X",
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_START",
+        "variable": 1
+    },
+    "ras.scan_ending_position": {
+        "name": {
+            "ja": "スキャン終了位置",
+            "en": "Scan Ending Position"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 9,
+        "unit": "$MEAS_SCAN_UNIT_X",
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_STOP",
+        "variable": 1
+    },
+    "ras.scan_step_size": {
+        "name": {
+            "ja": "スキャンステップサイズ",
+            "en": "Scan Step Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 10,
+        "unit": "$MEAS_SCAN_UNIT_X",
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_STEP",
+        "variable": 1
+    },
+    "ras.scan_speed": {
+        "name": {
+            "ja": "スキャンスピード",
+            "en": "Scan Speed"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 11,
+        "unit": "$MEAS_SCAN_SPEED_UNIT",
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_SPEED",
+        "variable": 1
+    },
+    "ras.scan_starting_date_time": {
+        "name": {
+            "ja": "スキャン開始時刻",
+            "en": "Scan Starting Date Time"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 12,
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_START_TIME",
+        "variable": 1
+    },
+    "ras.scan_ending_date_time": {
+        "name": {
+            "ja": "スキャン終了時刻",
+            "en": "Scan Ending Date Time"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 13,
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_END_TIME",
+        "variable": 1
+    },
+    "ras.memo": {
+        "name": {
+            "ja": "メモ",
+            "en": "Memo"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 14,
+        "mode": "ras形式",
+        "originalName": "FILE_MEMO",
+        "variable": 1
+    },
+    "ras.measurement_operator": {
+        "name": {
+            "ja": "測定実施者",
+            "en": "Measurement Operator"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 15,
+        "mode": "ras形式",
+        "originalName": "FILE_OPERATOR",
+        "variable": 1
+    },
+    "ras.detector_pixel_size": {
+        "name": {
+            "ja": "検出器ピクセルサイズ",
+            "en": "Detector Pixel Size"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 16,
+        "unit": "mm",
+        "mode": "ras形式",
+        "originalName": "HW_COUNTER_PIXEL_SIZE",
+        "variable": 1
+    },
+    "ras.x-ray_target_material": {
+        "name": {
+            "ja": "X線ターゲットの材質",
+            "en": "X-ray Target Material"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 17,
+        "mode": "ras形式",
+        "originalName": "HW_XG_TARGET_NAME",
+        "variable": 1
+    },
+    "ras.k_alpha_1_wavelength": {
+        "name": {
+            "ja": "K_alpha1の波長",
+            "en": "K_alpha_1 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 18,
+        "unit": "Angstrom",
+        "mode": "ras形式",
+        "originalName": "HW_XG_WAVE_LENGTH_ALPHA1",
+        "variable": 1
+    },
+    "ras.k_alpha_2_wavelength": {
+        "name": {
+            "ja": "K_alpha2の波長",
+            "en": "K_alpha_2 Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 19,
+        "unit": "Angstrom",
+        "mode": "ras形式",
+        "originalName": "HW_XG_WAVE_LENGTH_ALPHA2",
+        "variable": 1
+    },
+    "ras.k_beta_wavelength": {
+        "name": {
+            "ja": "K_betaの波長",
+            "en": "K_beta Wavelength"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 20,
+        "unit": "Angstrom",
+        "mode": "ras形式",
+        "originalName": "HW_XG_WAVE_LENGTH_BETA",
+        "variable": 1
+    },
+    "ras.optics_attribute": {
+        "name": {
+            "ja": "光学系属性",
+            "en": "Optics Attribute"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 21,
+        "mode": "ras形式",
+        "originalName": "MEAS_COND_OPT_ATTR",
+        "variable": 1
+    },
+    "ras.wavelength_type": {
+        "name": {
+            "ja": "波長タイプ",
+            "en": "Wavelength Type"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 22,
+        "mode": "ras形式",
+        "originalName": "MEAS_COND_XG_WAVE_TYPE",
+        "variable": 1
+    },
+    "ras.data_point_number": {
+        "name": {
+            "ja": "データ点数",
+            "en": "Data Point Number"
+        },
+        "schema": {
+            "type": "number"
+        },
+        "order": 23,
+        "mode": "ras形式",
+        "originalName": "MEAS_DATA_COUNT",
+        "variable": 1
+    },
+    "ras.scan_axis_unit": {
+        "name": {
+            "ja": "スキャン軸の単位",
+            "en": "Scan Axis Unit"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 24,
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_UNIT_X",
+        "variable": 1
+    },
+    "ras.intensity_unit": {
+        "name": {
+            "ja": "強度の単位",
+            "en": "Intensity Unit"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 25,
+        "mode": "ras形式",
+        "originalName": "MEAS_SCAN_UNIT_Y",
+        "variable": 1
+    },
+    "main_image_setting": {
+        "name": {
+            "ja": "代表画像の設定",
+            "en": "Main Image Setting"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 26,
+        "variable": 1
+    },
+    "meas_scan_axis_x": {
+        "name": {
+            "ja": "X軸ラベル(名称)",
+            "en": "Measurement scan axis X"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 27,
+        "variable": 1
+    },
+    "meas_scan_unit_x": {
+        "name": {
+            "ja": "X軸ラベル(単位)",
+            "en": "Measurement scan unit X"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 28,
+        "variable": 1
+    },
+    "meas_scan_axis_y": {
+        "name": {
+            "ja": "Y軸ラベル(名称)",
+            "en": "Measurement scan axis Y"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 29,
+        "variable": 1
+    },
+    "meas_scan_unit_y": {
+        "name": {
+            "ja": "Y軸ラベル(単位)",
+            "en": "Measurement scan unit Y"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "order": 30,
+        "variable": 1
+    }
+}

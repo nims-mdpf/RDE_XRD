@@ -1,0 +1,164 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://rde.nims.go.jp/rde/dataset-templates/NIMS_RIGAKU_XRD_catalog/catalog.schema.json",
+    "type": "object",
+    "required": [
+        "catalog"
+    ],
+    "properties": {
+        "catalog": {
+            "type": "object",
+            "label": {
+                "ja": "データカタログ",
+                "en": "Data Catalog"
+            },
+            "properties": {
+                "dataset_title": {
+                    "type": "string",
+                    "label": {
+                        "ja": "データセット名",
+                        "en": "Dataset Title"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "abstract": {
+                    "type": "string",
+                    "label": {
+                        "ja": "概要",
+                        "en": "Abstract"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "data_creator": {
+                    "type": "string",
+                    "label": {
+                        "ja": "作成者",
+                        "en": "Data Creator"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "language": {
+                    "type": "string",
+                    "label": {
+                        "ja": "言語",
+                        "en": "Language"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "experimental_apparatus": {
+                    "type": "string",
+                    "label": {
+                        "ja": "使用装置",
+                        "en": "Experimental Apparatus"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 10
+                    }
+                },
+                "data_distribution": {
+                    "type": "string",
+                    "label": {
+                        "ja": "データの再配布",
+                        "en": "Data Distribution"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "raw_data_type": {
+                    "type": "string",
+                    "label": {
+                        "ja": "データの種類",
+                        "en": "Raw Data Type"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 5
+                    }
+                },
+                "stored_data": {
+                    "type": "string",
+                    "label": {
+                        "ja": "格納データ",
+                        "en": "Stored Data"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 20
+                    }
+                },
+                "remarks": {
+                    "type": "string",
+                    "label": {
+                        "ja": "備考",
+                        "en": "Remarks"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "references": {
+                    "type": "string",
+                    "label": {
+                        "ja": "参考論文",
+                        "en": "References"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "key1": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー1",
+                        "en": "key1"
+                    }
+                },
+                "key2": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー2",
+                        "en": "key2"
+                    }
+                },
+                "key3": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー3",
+                        "en": "key3"
+                    }
+                },
+                "key4": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー4",
+                        "en": "key4"
+                    }
+                },
+                "key5": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー5",
+                        "en": "key5"
+                    }
+                }
+            }
+        }
+    }
+}
