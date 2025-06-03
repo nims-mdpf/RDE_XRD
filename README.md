@@ -13,6 +13,12 @@ RDE_XRDデータセットテンプレートは、XRD手法で測定されたデ�
 
 詳細は[docs/manual/index.md](docs/manual/index.md)を参照してください。
 
+RDEToolKitを用いて作成されています。
+
+## 関連リンク
+
+- [RDEToolKit](https://github.com/nims-mdpf/rdetoolkit)
+
 ## 利用ルールおよびライセンス
  
 * 本プログラムはMITライセンスで提供されています。
