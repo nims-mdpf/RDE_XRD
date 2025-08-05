@@ -17,6 +17,8 @@ RDE_XRDデータセットテンプレートは、XRD手法で測定されたデ�
 
 RDEToolKitを用いて作成されています。
 
+提供しているRDEデータセットテンプレート RDE_XRD を動かしてみる手順は[tryout/tryout.md](tryout/tryout.md)を参照してください。
+
 ## 関連リンク
 
 - [RDEToolKit](https://github.com/nims-mdpf/rdetoolkit)
