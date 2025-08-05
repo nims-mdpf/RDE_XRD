@@ -57,7 +57,7 @@ workフォルダには以下の内容のフォルダが用意されています
     ```cmd
     $ pyenv local 3.11.13
     $ python -m venv venv
-    (venv) $ . venv/bin/activate
+    $ . venv/bin/activate
     (venv) $ pip install pip --upgrade
     ```
 5. pythonパッケージの導入(pipとrequirements.txtを利用して)
