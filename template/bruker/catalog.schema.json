@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://rde.nims.go.jp/rde/dataset-templates/NIMS_RIGAKU_XRD_catalog/catalog.schema.json",
+    "$id": "https://rde.nims.go.jp/rde/dataset-templates/NIMS_BRUKER_XRD_catalog/catalog.schema.json",
     "type": "object",
     "required": [
         "catalog"
@@ -121,41 +121,6 @@
                     "options": {
                         "widget": "textarea",
                         "rows": 3
-                    }
-                },
-                "key1": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー1",
-                        "en": "key1"
-                    }
-                },
-                "key2": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー2",
-                        "en": "key2"
-                    }
-                },
-                "key3": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー3",
-                        "en": "key3"
-                    }
-                },
-                "key4": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー4",
-                        "en": "key4"
-                    }
-                },
-                "key5": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー5",
-                        "en": "key5"
                     }
                 }
             }

@@ -45,6 +45,7 @@ class GraphPlotter(IGraphPlotter[pd.DataFrame]):
         self,
         data: pd.DataFrame,
         resource_paths: RdeOutputResourcePath,
+        processing_file: Path,
         region_num: int,
     ) -> None:
         """Plot main.
@@ -54,6 +55,7 @@ class GraphPlotter(IGraphPlotter[pd.DataFrame]):
         Args:
             data (pd.DataFrame): measurement data.
             resource_paths (RdeOutputResourcePath): Paths to output resources for saving results.
+            processing_file (Path): processing file.
             region_num (int): Number of regions
 
         """
@@ -61,7 +63,7 @@ class GraphPlotter(IGraphPlotter[pd.DataFrame]):
         multi_region_num: Final[int] = 2
 
         self._set_multi_dataset(data)
-        image_basename = resource_paths.rawfiles[0].stem
+        image_basename = processing_file.stem
         if region_num == single_region_num:
             self._plot_single_region(data, resource_paths, image_basename)
         elif region_num == multi_region_num:
@@ -71,6 +73,7 @@ class GraphPlotter(IGraphPlotter[pd.DataFrame]):
     def multiplot_main(
         self,
         resource_paths: RdeOutputResourcePath,
+        processing_file: Path,
     ) -> None:
         """Multiplot main.
 
@@ -78,9 +81,10 @@ class GraphPlotter(IGraphPlotter[pd.DataFrame]):
 
         Args:
             resource_paths (RdeOutputResourcePath): Paths to output resources for saving results.
+            processing_file (Path): processing file.
 
         """
-        image_basename = resource_paths.rawfiles[0].stem
+        image_basename = processing_file.stem
         save_path = resource_paths.main_image.joinpath(f"{image_basename}_log.png") \
             if self.main_image_scaletype == ScaleType.log \
             else resource_paths.main_image.joinpath(f"{image_basename}.png")

@@ -39,6 +39,7 @@ class StructuredDataProcessor(IStructuredDataProcessor):
     def save_csv(
             self,
             resource_paths: RdeOutputResourcePath,
+            processing_file: Path,
             dataframe: pd.DataFrame,
             region_num: int,
     ) -> None:
@@ -46,12 +47,13 @@ class StructuredDataProcessor(IStructuredDataProcessor):
 
         Args:
             resource_paths (RdeOutputResourcePath): Paths to output resources for saving results.
+            processing_file (Path): processing file.
             dataframe (pd.DataFrame): The data to save.
             region_num (int): Region numbers.
 
         """
         rename_save_path = self.reindex_savefilename(
-            resource_paths.struct.joinpath(f"{resource_paths.rawfiles[0].stem}.csv"),
+            resource_paths.struct.joinpath(f"{processing_file.stem}.csv"),
             region_num=region_num,
         )
         dataframe.to_csv(rename_save_path, index=False)
@@ -59,12 +61,14 @@ class StructuredDataProcessor(IStructuredDataProcessor):
     def save_structured_contents(
         self,
         resource_paths: RdeOutputResourcePath,
+        processing_file: Path,
         compressed_files: list[str],
     ) -> None:
         """Save a file with human-readable metadata to the specified folder.
 
         Args:
             resource_paths (RdeOutputResourcePath): Paths to output resources for saving results.
+            processing_file (Path): processing file.
             compressed_files (list[str]): compressed files. (not use)
 
         Note:
@@ -73,8 +77,8 @@ class StructuredDataProcessor(IStructuredDataProcessor):
         """
         for cmpfile in compressed_files:
             basename = self._get_basename(cmpfile)
-            contents = self._read_compressed_contents(str(cmpfile), str(resource_paths.rawfiles[0])) \
-                if resource_paths.rawfiles[0] is not None \
+            contents = self._read_compressed_contents(str(cmpfile), str(processing_file)) \
+                if processing_file is not None \
                 else self._read_text_contents(cmpfile)
             self._write_contents(resource_paths.struct.joinpath(basename), contents)
 

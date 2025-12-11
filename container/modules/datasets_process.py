@@ -28,33 +28,34 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
         The actual function names and processing details may vary depending on the project.
 
     """
+    region_num: int = 1
     # Get config
-    config = XrdFactory.get_config(resource_paths.rawfiles[0], srcpaths.tasksupport)
+    config, processing_file = XrdFactory.get_config(resource_paths, srcpaths.tasksupport)
     # Get the class to use
-    metadata_def, module = XrdFactory.get_objects(resource_paths.rawfiles[0], srcpaths.tasksupport, config)
+    metadata_def, module = XrdFactory.get_objects(processing_file, srcpaths.tasksupport, config)
 
     compressd_files: list[str] = []
     # Read Input File -> Save Meta -> Struct
-    for data, meta in module.file_reader.read(resource_paths.rawfiles[0]):
+    for data, meta in module.file_reader.read(processing_file):
         region_num = module.file_reader.get_region_number()
 
         # Get meta
         const_meta, repeat_meta = module.meta_parser.parse(meta)
 
         # Save csv
-        module.structured_processor.save_csv(resource_paths, data, region_num=region_num)
+        module.structured_processor.save_csv(resource_paths, processing_file, data, region_num=region_num)
         # Execute save process for structured files, only when a .rasx file is input,
         # as there are other files(xml, txt) compressed.
-        if resource_paths.rawfiles[0].suffix == ".rasx":
-            compressd_files = module.file_reader.get_files_from_rasx(resource_paths.rawfiles[0])
-            module.structured_processor.save_structured_contents(resource_paths, compressd_files)
+        if processing_file.suffix == ".rasx":
+            compressd_files = module.file_reader.get_files_from_rasx(processing_file)
+            module.structured_processor.save_structured_contents(resource_paths, processing_file, compressd_files)
 
         # Plot
-        module.graph_plotter.plot_main(data, resource_paths, region_num)
+        module.graph_plotter.plot_main(data, resource_paths, processing_file, region_num)
 
         # Overwrite invoice
         # (custom/measurement_measured_date)
-        module.invoice_writer.overwrite_invoice_measured_date(resource_paths.rawfiles[0].suffix, resource_paths, const_meta, repeat_meta)
+        module.invoice_writer.overwrite_invoice_measured_date(resource_paths, processing_file.suffix, const_meta, repeat_meta)
 
     # Save Meta
     # Add the graph scale meta
@@ -68,8 +69,4 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
     # Integrated graph image if needed
     multi_resion_num: Final[int] = 2
     if region_num == multi_resion_num:
-        module.graph_plotter.multiplot_main(resource_paths)
-
-    # Overwrite invoice
-    # (sample/sampleId, names)
-    module.invoice_writer.overwrite_invoice_sample_name(resource_paths)
+        module.graph_plotter.multiplot_main(resource_paths, processing_file)

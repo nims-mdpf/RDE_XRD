@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -42,7 +43,7 @@ class MetaParser(XrdMetaParser):
                 continue
             if k == "X-Ray":
                 x_ray_value = v
-                voltage, current = x_ray_value.split("/")
+                voltage, current = re.split(r'[/\s]+', x_ray_value, maxsplit=1)
                 self.repeated_meta_info["txt.x-ray_tube_voltage"].append(voltage)
                 self.repeated_meta_info["txt.x-ray_tube_current"].append(current)
             elif k == "入射スリット" and '/' in v:

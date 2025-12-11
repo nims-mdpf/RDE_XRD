@@ -63,7 +63,7 @@ class FileReader(XrdFileReader):
             raise StructuredError(err_msg)
 
         self.region_num = len(self.data.keys())
-        for data_key, meta_key in zip(self.data, self.meta):
+        for data_key, meta_key in zip(self.data, self.meta, strict=False):
             yield self.convert_dtype(self.data[data_key]), self.meta[meta_key]
 
     def convert_dtype(self, dataframe: pd.DataFrame, *, totype: ToDataTypes = ToDataTypes.FLOAT) -> pd.DataFrame:

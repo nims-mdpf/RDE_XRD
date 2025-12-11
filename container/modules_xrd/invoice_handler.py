@@ -27,8 +27,8 @@ class InvoiceWriter:
 
     def overwrite_invoice_measured_date(
         self,
-        suffix: str,
         resource_paths: RdeOutputResourcePath,
+        suffix: str,
         const_meta: MetaType,
         repeat_meta: RepeatedMetaType,
     ) -> None:
@@ -39,8 +39,8 @@ class InvoiceWriter:
         # based on the file meta data output from the device, so I added a process to write it to invoice.json.
 
         Args:
-            suffix (str): Input file extension.
             resource_paths (RdeOutputResourcePath): Paths to output resources for saving results.
+            suffix (str): Input file extension.
             const_meta (MetaType): Metadata defined as constant.
             repeat_meta (RepeatedMetaType): Metadata defined as variable.
 
@@ -136,7 +136,7 @@ class InvoiceWriter:
                 keywd = "StartTime"
             case ".uxd":
                 keywd = ";contentof"
-                date_expressions = self._extract_date(repeat_meta[keywd][0])
+                date_expressions = self._extract_date(repeat_meta, keywd)
 
         mesurement_date_value = invoice_obj["custom"].get("measurement_measured_date")
         if const_meta.get(keywd) and not mesurement_date_value:
@@ -148,11 +148,12 @@ class InvoiceWriter:
                 update_invoice_term_info["measurement_measured_date"] = str(date_expressions)
         return update_invoice_term_info
 
-    def _extract_date(self, sentence: str | float) -> datetime | None:
+    def _extract_date(self, repeat_meta: RepeatedMetaType, keywd: str) -> datetime | None:
         """Find out if the date can be extracted.
 
         Args:
-            sentence (str | float): Sentence.
+            repeat_meta (RepeatedMetaType): Repeated meta.
+            keywd (str): item of measurement date and time.
 
         Returns:
             datetime | None: Extracted string. (Return 'None' if not possible.)
@@ -167,6 +168,7 @@ class InvoiceWriter:
             (\d{1,2})       # 1 or 2 digits number
             )""", re.VERBOSE)
 
+        sentence = repeat_meta[keywd][0]
         if isinstance(sentence, str):
             hit_date = date_type.search(sentence)
             if hit_date:

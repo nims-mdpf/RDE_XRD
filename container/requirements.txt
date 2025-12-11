@@ -1,25 +1,14 @@
 # PyPI library used in all projects
-chardet==5.2.0
-charset-normalizer==3.3.2
-numpy==1.26.4
-matplotlib==3.9.2
-openpyxl==3.1.5
-pandas==2.2.0
-rdetoolkit==1.0.4
+rdetoolkit==1.4.2
 # PyPI libraries to be customized and installed in each project
 contourpy==1.1.0
 cycler==0.11.0
 fonttools==4.42.1
 kiwisolver==1.4.5
-packaging==23.0
 Pillow==10.4.0
 plotly==5.23.0
-pydantic==2.6.3
 pydantic-xml==2.9.0
 pyparsing==3.1.1
-python-dateutil==2.8.2
-pytz==2023.3.post1
 types-pyyaml==6.0.12.20240808
 scipy==1.13.0
-six==1.16.0
 xlrd==2.0.1

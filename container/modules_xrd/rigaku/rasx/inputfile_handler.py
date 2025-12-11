@@ -56,7 +56,7 @@ class FileReader(XrdFileReader):
             raise StructuredError(err_msg)
 
         self.region_num = len(self.data.keys())
-        for data_key, meta_key in zip(self.data, self.meta):
+        for data_key, meta_key in zip(self.data, self.meta, strict=False):
             header = self.make_header(self.meta[meta_key])
             data = self.reformat_dataframe(self.data[data_key], header=header)
             yield data, self.meta[meta_key]
