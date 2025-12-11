@@ -32,7 +32,7 @@ class IInputFileParser(ABC):
     """
 
     @abstractmethod
-    def read(self, path: Path) -> Generator[tuple[pd.DataFrame, ExtendMetaType], None, None]:
+    def read(self, srcpath: Path) -> Generator[tuple[pd.DataFrame, ExtendMetaType], None, None]:
         """Read."""
         raise NotImplementedError
 
@@ -58,12 +58,18 @@ class IStructuredDataProcessor(ABC):
     """
 
     @abstractmethod
-    def save_csv(self, resource_paths: RdeOutputResourcePath, dataframe: pd.DataFrame, region_num: int) -> None:
+    def save_csv(
+        self,
+        resource_paths: RdeOutputResourcePath,
+        processing_file: Path,
+        dataframe: pd.DataFrame,
+        region_num: int,
+    ) -> None:
         """Save csv."""
         raise NotImplementedError
 
 
-class IMetaParser(Generic[T], ABC):
+class IMetaParser(ABC, Generic[T]):
     """Abstract base class (interface) for meta information parsers.
 
     This interface defines the contract that meta information parser
@@ -83,13 +89,13 @@ class IMetaParser(Generic[T], ABC):
 
     @abstractmethod
     def save_meta(
-        self, save_path: Path, meta: Meta, *, const_meta_info: MetaType | None = None, repeated_meta_info: RepeatedMetaType | None = None,
+        self, save_path: Path, metaobj: Meta, *, const_meta_info: MetaType | None = None, repeated_meta_info: RepeatedMetaType | None = None,
     ) -> None:
         """Save meta."""
         raise NotImplementedError
 
 
-class IGraphPlotter(Generic[T], ABC):
+class IGraphPlotter(ABC, Generic[T]):
     """Abstract base class (interface) for graph plotting implementations.
 
     This interface defines the contract that graph plotting

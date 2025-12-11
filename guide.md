@@ -1,4 +1,4 @@
-# RDE XRD用テンプレート
+# XRD用テンプレート
 
 ## 概要
 XRDをご利用の方に適したテンプレートです。以下の装置メーカーに対応しています。
@@ -14,30 +14,30 @@ XRDの専門家によって監修されたメタ情報を上記ファイルか�
 - マジックネーム対応（データ名を${filename}とすると、ファイル名をデータ名にマッピングする）
 
 ## メタ情報
-- [メタ情報](docs/rigaku/requirement_analysis/要件定義.xlsx)
+- [メタ情報](docs/requirement_analysis/要件定義.xlsx)
 
 ## 基本情報
 
 ### コンテナ情報
-- 【コンテナ名】nims_xrd:v1.1
+- 【コンテナ名】nims_xrd:v1.3
 
 ### テンプレート情報
 - DT0005:
-    - 【データセットテンプレートID】NIMS_DT0005_XRD_RIGAKU_v1.1
+    - 【データセットテンプレートID】NIMS_DT0005_XRD_RIGAKU_v1.3
     - 【データセットテンプレート名日本語】XRD Rigaku データセットテンプレート
     - 【データセットテンプレート名英語】XRD Rigaku dataset-template
     - 【データセットテンプレートの説明】RigakuのXRDをご利用の方に適したモードです。ras/rasx/TXTフォーマットでデータを取得されている方がご利用いただけます。 XRDの専門家によって監修されたメタ情報をras/rasx/TXTファイルから自動的にRDEが抽出します。 プロットはリニアスケールとログスケールを出力します。
-    - 【バージョン】1.1
+    - 【バージョン】1.3
     - 【データセット種別】加工・計測レシピ型
     - 【データ構造化】あり (システム上「あり」を選択)
     - 【取り扱い事業】NIMS研究および共同研究プロジェクト (PROGRAM)
     - 【装置名】(なし。装置情報を紐づける場合はこのテンプレートを複製し、装置情報を設定すること。)
 - DT0009:
-    - 【データセットテンプレートID】NIMS_DT0009_XRD_BRUKER_v1.1
+    - 【データセットテンプレートID】NIMS_DT0009_XRD_BRUKER_v1.3
     - 【データセットテンプレート名日本語】XRD Bruker データセットテンプレート
     - 【データセットテンプレート名英語】XRD Bruker dataset-template
     - 【データセットテンプレートの説明】BrukerのXRDをご利用の方に適したモードです。uxdフォーマットでデータを取得されている方がご利用いただけます。 XRDの専門家によって監修されたメタ情報をuxdファイルから自動的にRDEが抽出します。 プロットはリニアスケールとログスケールを出力します。
-    - 【バージョン】1.1
+    - 【バージョン】1.3
     - 【データセット種別】加工・計測レシピ型
     - 【データ構造化】あり (システム上「あり」を選択)
     - 【取り扱い事業】NIMS研究および共同研究プロジェクト (PROGRAM)
@@ -61,6 +61,7 @@ xrd
 ├── README.md
 ├── container
 │   ├── Dockerfile
+│   ├── Dockerfile_nims (NIMSイントラ用)
 │   ├── data (入出力(下記参照))
 │   ├── main.py
 │   ├── modules (ソースコード)
@@ -92,10 +93,22 @@ xrd
 │   ├── pyproject.toml
 │   ├── requirements-test.txt
 │   ├── requirements.txt
+│   ├── tests (テストコード)
 │   └── tox.ini
 ├── docs (ドキュメント)
 │   ├── manual (マニュアル)
 │   └── requirement_analysis (要件定義)
+├── inputdata (サンプルデータ)
+│   ├── rigaku (Rigaku向け)
+│   │   ├── ras_basic (rasフォーマット, invoiceモード)
+│   │   ├── ras_excel_invoice (rasフォーマット, excelinvoiceモード)
+│   │   ├── ras_multi_region (rasフォーマット, マルチリージョンデータ)
+│   │   ├── rasx_basic (rasxフォーマット, invoiceモード)
+│   │   ├── rasx_excel_invoice (rasxフォーマット, excelinvoiceモード)
+│   │   ├── txt_space (TXTフォーマット, スペース区切りファイル)
+│   │   └── txt_tab (TXTフォーマット, タブ区切りファイル)
+│   └── bruker (Bruker向け)
+│       └── uxd_basic (uxdフォーマット, invoiceモード)
 └── template (テンプレート群)
      ├── rigaku (Rigaku向け)
      │   ├── batch.yaml
@@ -170,8 +183,8 @@ xrd
 - ツリー表示タブではタクソノミーにしたがってデータを階層表示する。データ名をクリックして詳細を閲覧する。
 
 ### 動作環境
-- Python: 3.11
-- RDEToolKit: 1.0.4
+- Python: 3.12
+- RDEToolKit: 1.4.2
 
 ## 入力ファイルから抽出するメタデータを追加(変更)する場合
 - 入力ファイルから抽出するメタデータを追加(変更)する場合、以下のファイルを修正する必要があります。

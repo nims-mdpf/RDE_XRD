@@ -20,7 +20,7 @@
                     "type": "number",
                     "label": {
                         "ja": "測定温度",
-                        "en": "Measurement Temperature"
+                        "en": "Measurement temperature"
                     },
                     "options": {
                         "unit": "C"
@@ -30,42 +30,7 @@
                     "type": "string",
                     "label": {
                         "ja": "試料ホルダー名",
-                        "en": "Sample Holder Name"
-                    }
-                },
-                "key1": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー1",
-                        "en": "key1"
-                    }
-                },
-                "key2": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー2",
-                        "en": "key2"
-                    }
-                },
-                "key3": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー3",
-                        "en": "key3"
-                    }
-                },
-                "key4": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー4",
-                        "en": "key4"
-                    }
-                },
-                "key5": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー5",
-                        "en": "key5"
+                        "en": "Sample holder name"
                     }
                 },
                 "common_data_type": {
@@ -80,7 +45,7 @@
                     "type": "string",
                     "label": {
                         "ja": "データの起源",
-                        "en": "Data Origin"
+                        "en": "Data origin"
                     },
                     "default": "experiments"
                 },
@@ -88,7 +53,7 @@
                     "type": "string",
                     "label": {
                         "ja": "技術カテゴリー",
-                        "en": "Technical Category"
+                        "en": "Technical category"
                     },
                     "default": "measurement"
                 },
@@ -163,6 +128,49 @@
                         "ja": "装置設置場所",
                         "en": "Instrumentation site"
                     }
+                },
+                "key1": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー1",
+                        "en": "key1"
+                    }
+                },
+                "key2": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー2",
+                        "en": "key2"
+                    }
+                },
+                "key3": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー3",
+                        "en": "key3"
+                    }
+                },
+                "key4": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー4",
+                        "en": "key4"
+                    }
+                },
+                "key5": {
+                    "type": "string",
+                    "label": {
+                        "ja": "キー5",
+                        "en": "key5"
+                    }
+                },
+                "scanning_mode_if_not_exist": {
+                    "type": "string",
+                    "label": {
+                        "ja": "スキャンモード (ファイルに設定がない場合)",
+                        "en": "Scanning mode (If not exist)"
+                    },
+                    "default": "2Theta-Theta"
                 }
             }
         },

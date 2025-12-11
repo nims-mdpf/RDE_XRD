@@ -4,7 +4,7 @@ job_specifications:
   allow_run_on_missing_image: true
   tasks:
   - id: task_1
-    docker_image: nims_mdpf_shared_xrd:v1.1
+    docker_image: nims_mdpf_shared_xrd:v1.3
     input_data:
       azure_storage:
       - storage_account_settings: mystorageaccount

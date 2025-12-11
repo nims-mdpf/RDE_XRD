@@ -54,7 +54,7 @@ class FileReader(XrdFileReader):
             raise StructuredError(err_msg)
 
         self.region_num = len(self.data.keys())
-        for data_key, meta_key in zip(self.data, self.meta):
+        for data_key, meta_key in zip(self.data, self.meta, strict=False):
             yield self.convert_dtype(self.data[data_key]), self.meta[meta_key]
 
     def convert_dtype(self, dataframe: pd.DataFrame, *, totype: str = "float") -> pd.DataFrame:
@@ -134,6 +134,8 @@ class FileReader(XrdFileReader):
             list[str]: The constructed header string.
 
         """
+        if 'ScanningMode' not in meta_lines:
+            meta_lines['ScanningMode'] = self.config['xrd']['scanning_mode_if_not_exist']
         x_label = self.config['xrd']['meas_scan_axis_x'] if self.config['xrd']['meas_scan_axis_x'] else meta_lines['ScanningMode']
         x_unit = "(" + self.config['xrd']['meas_scan_unit_x'] + ")" if self.config['xrd']['meas_scan_unit_x'] else ""
         y_label = self.config['xrd']['meas_scan_axis_y'] if self.config['xrd']['meas_scan_axis_y'] else "Intensity"

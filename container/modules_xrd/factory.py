@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
 import yaml
 from rdetoolkit.exceptions import StructuredError
+from rdetoolkit.models.rde2types import RdeOutputResourcePath
+from rdetoolkit.rde2util import read_from_json_file
 
 from modules_xrd.bruker.uxd.inputfile_handler import FileReader as UxdFileReader
 from modules_xrd.bruker.uxd.meta_handler import MetaParser as UxdMetaParser
@@ -54,20 +57,37 @@ class XrdFactory:
         self.structured_processor = structured_processor
 
     @staticmethod
-    def get_config(rawfile: Path, path_tasksupport: Path) -> Any:
+    def get_config(resource_paths: RdeOutputResourcePath, path_tasksupport: Path) -> tuple[Any, Path]:
         """Obtain a variety of data.
 
         Obtain configuration data.
 
         Args:
-            rawfile (Path): measurement file.
+            resource_paths (RdeOutputResourcePath): output file.
             path_tasksupport (Path): tasksupport path.
 
         Returns:
             config (Any): config data.
+            processing_file (Path): processing file.
 
         """
-        suffix = rawfile.suffix.lower()
+        if not len(resource_paths.rawfiles):
+            err_msg = "No measurement file found."
+            raise StructuredError(err_msg)
+
+        # Get priorities
+        ext_priority = {
+            ".rasx": 1,
+            ".ras": 2,
+            ".txt": 3,
+        }
+        sorted_files: list[Path] = sorted(
+            resource_paths.rawfiles,
+            key=lambda f: ext_priority.get(os.path.splitext(f)[1].lower(), float('inf')),
+        )
+        processing_file = sorted_files[0]
+
+        suffix = processing_file.suffix.lower()
         rdeconfig_file = path_tasksupport.joinpath("rdeconfig.yaml")
 
         # Get the graph scale of the representative image from rdeconfig.yaml.
@@ -82,11 +102,17 @@ class XrdFactory:
             err_msg = f"Invalid configuration file: {rdeconfig_file}"
             raise StructuredError(err_msg) from None
 
-        # Determine the file delimiter.
         if suffix == ".txt":
-            config['xrd']['delimiter_type'] = XrdFileReader.determine_delimiter(rawfile)
+            # Determine the file delimiter.
+            config['xrd']['delimiter_type'] = XrdFileReader.determine_delimiter(processing_file)
 
-        return config
+            # Get bounds for differential_evolution.
+            invoice_obj = read_from_json_file(resource_paths.invoice_org)
+            invoice_scanning_mode = invoice_obj.get("custom", "").get("scanning_mode_if_not_exist")
+            config["xrd"]["scanning_mode_if_not_exist"] = \
+                invoice_scanning_mode if invoice_scanning_mode is not None else "2Theta-Theta"
+
+        return config, processing_file
 
     @staticmethod
     def get_objects(rawfile: Path, path_tasksupport: Path, config: dict) -> tuple[Path, XrdFactory]:

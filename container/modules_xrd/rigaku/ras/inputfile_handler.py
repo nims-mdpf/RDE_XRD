@@ -52,7 +52,7 @@ class FileReader(XrdFileReader):
             raise StructuredError(err_msg)
 
         self.region_num = len(self.data.keys())
-        for data_key, meta_key in zip(self.data, self.meta):
+        for data_key, meta_key in zip(self.data, self.meta, strict=False):
             yield self.convert_dtype(self.data[data_key]), self.meta[meta_key]
 
     def get_region_number(self, *, input_path: Path | None = None) -> int:
@@ -87,7 +87,7 @@ class FileReader(XrdFileReader):
 
         data_pattern = re.findall(r"\*RAS_INT_START\n(.*?)\*RAS_INT_END", contents, re.DOTALL)
         header_pattern = re.findall(r"\*RAS_HEADER_START\n(.*?)\*RAS_HEADER_END", contents, re.DOTALL)
-        for i, (data_section, header_section) in enumerate(zip(data_pattern, header_pattern), start=1):
+        for i, (data_section, header_section) in enumerate(zip(data_pattern, header_pattern, strict=False), start=1):
             meta_blocks[f"series_meta{i}"] = header_section.strip().split("\n")
             header = self.make_header(meta_blocks[f"series_meta{i}"])
 
@@ -192,7 +192,7 @@ class FileReader(XrdFileReader):
             str: Post-validated string.
 
         """
-        char_maps = {"TwoThetaTheta": "2Theta-Theta", "2θ/θ": "2Theta-Theta"}
+        char_maps = {"TwoThetaTheta": "2Theta-Theta", "2θ/θ": "2Theta-Theta", "2θ": "2Theta"}
         replace_value = char_maps.get(text)
         if replace_value:
             return replace_value

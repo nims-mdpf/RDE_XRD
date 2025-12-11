@@ -86,11 +86,6 @@ XRDの専門家によって監修されたメタ情報をデータファイル�
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|
 |measurement_temperature||測定温度|Measurement Temperature|C||number|||
 |sample_holder_name||試料ホルダー名|Sample Holder Name|||string|||
-|key1||キー1|key1|||string||汎用項目|
-|key2||キー2|key2|||string||汎用項目|
-|key3||キー3|key3|||string||汎用項目|
-|key4||キー4|key4|||string||汎用項目|
-|key5||キー5|key5|||string||汎用項目|
 |common_data_type||登録データタイプ|Data type||XRD|string|||
 |common_data_origin||データの起源|Data Origin||experiments|string|||
 |common_technical_category||技術カテゴリー|Technical Category||measurement|string|||
@@ -103,6 +98,12 @@ XRDの専門家によって監修されたメタ情報をデータファイル�
 |measurement_measured_date||分析年月日|Measured date|||string||データファイルから自動取得 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_START_TIME</td></tr><tr><td>.rasx</td><td>rasx.scan_starting_date_time</td></tr><tr><td>.TXT</td><td>StartTime</td></tr><tr><td>.uxd</td><td>;content of</td></tr></tbody></table>|
 |measurement_standardized_procedure||標準手順|Standardized procedure|||string|||
 |measurement_instrumentation_site||装置設置場所|Instrumentation site|||string|||
+|key1||キー1|key1|||string||汎用項目|
+|key2||キー2|key2|||string||汎用項目|
+|key3||キー3|key3|||string||汎用項目|
+|key4||キー4|key4|||string||汎用項目|
+|key5||キー5|key5|||string||汎用項目|
+|scanning_mode_if_not_exist||スキャンモード (ファイルに設定がない場合)|Scanning mode (If not exist)|||string||txtフォーマットの計測データにScanningModeがない場合に使用|
 
 #### 試料情報
 
@@ -181,11 +182,6 @@ XRDの専門家によって監修されたメタ情報をデータファイル�
 |stored_data|格納データ|Stored Data|string||
 |remarks|備考|Remarks|string||
 |references|参考論文|References|string||
-|key1|キー1|key1|string|送り状メタkey1の説明|
-|key2|キー2|key2|string|送り状メタkey2の説明|
-|key3|キー3|key3|string|送り状メタkey3の説明|
-|key4|キー4|key4|string|送り状メタkey4の説明|
-|key5|キー5|key5|string|送り状メタkey5の説明|
 
 ## 構造化処理の詳細
 
