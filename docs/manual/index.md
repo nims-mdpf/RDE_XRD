@@ -319,3 +319,15 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
     # (sample/sampleId, names)
     module.invoice_writer.overwrite_invoice_sample_name(resource_paths)
 ```
+
+## データセットテンプレートシートについて
+
+　メタデータ定義(metadata-def.json)、送状定義(invoice.schema.json)、カタログ定義(catalog.schema.json)をエクセル形式のシートから生成することができるツールを以下に用意してあります。
+
+[RDE/データセットテンプレート生成、確認ツール](https://github.com/nims-mdpf/RDE_datasettemplate-schemafile-make-tool)
+
+　上記のツールで利用可能な本データセットテンプレート用のデータセットテンプレートシートは以下の通りです。
+
+- [templates/bruker用](./RDEDatasetTemplateSheet_RDE_XRD_bruker.xlsx)
+- [templates/rigaku用](./RDEDatasetTemplateSheet_RDE_XRD_rigaku.xlsx)
+

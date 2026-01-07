@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://rde.nims.go.jp/rde/dataset-templates/NIMS_RIGAKU_XRD/invoice.schema.json",
-    "description": "固有情報と試料情報のスキーマ",
+    "$id": "https://rde.nims.go.jp/rde/dataset-templates/RDEDatasetTemplateSheet_RDE_XRD_rigaku/invoice.schema.json",
+    "description": "標準データセットテンプレートRDE_XRDのrigaku用RDEデータセットテンプレート: 送状定義",
     "type": "object",
     "required": [
         "custom",
@@ -12,101 +12,136 @@
             "type": "object",
             "label": {
                 "ja": "固有情報",
-                "en": "Specific Information"
+                "en": "Custom Information"
             },
             "required": [],
             "properties": {
                 "measurement_temperature": {
-                    "type": "number",
                     "label": {
                         "ja": "測定温度",
-                        "en": "Measurement temperature"
+                        "en": "Measurement Temperature"
                     },
+                    "type": "number",
                     "options": {
                         "unit": "C"
                     }
                 },
                 "sample_holder_name": {
-                    "type": "string",
                     "label": {
                         "ja": "試料ホルダー名",
-                        "en": "Sample holder name"
-                    }
+                        "en": "Sample Holder Name"
+                    },
+                    "type": "string"
+                },
+                "key1": {
+                    "label": {
+                        "ja": "キー1",
+                        "en": "key1"
+                    },
+                    "type": "string"
+                },
+                "key2": {
+                    "label": {
+                        "ja": "キー2",
+                        "en": "key2"
+                    },
+                    "type": "string"
+                },
+                "key3": {
+                    "label": {
+                        "ja": "キー3",
+                        "en": "key3"
+                    },
+                    "type": "string"
+                },
+                "key4": {
+                    "label": {
+                        "ja": "キー4",
+                        "en": "key4"
+                    },
+                    "type": "string"
+                },
+                "key5": {
+                    "label": {
+                        "ja": "キー5",
+                        "en": "key5"
+                    },
+                    "type": "string"
                 },
                 "common_data_type": {
-                    "type": "string",
                     "label": {
                         "ja": "登録データタイプ",
                         "en": "Data type"
                     },
+                    "type": "string",
                     "default": "XRD"
                 },
                 "common_data_origin": {
-                    "type": "string",
                     "label": {
                         "ja": "データの起源",
-                        "en": "Data origin"
+                        "en": "Data Origin"
                     },
+                    "type": "string",
                     "default": "experiments"
                 },
                 "common_technical_category": {
-                    "type": "string",
                     "label": {
                         "ja": "技術カテゴリー",
-                        "en": "Technical category"
+                        "en": "Technical Category"
                     },
+                    "type": "string",
                     "default": "measurement"
                 },
                 "common_reference": {
-                    "type": "string",
                     "label": {
                         "ja": "参考文献",
                         "en": "Reference"
-                    }
+                    },
+                    "type": "string"
                 },
                 "measurement_method_category": {
-                    "type": "string",
                     "label": {
                         "ja": "計測法カテゴリー",
                         "en": "Method category"
                     },
+                    "type": "string",
                     "default": "散乱_回折"
                 },
                 "measurement_method_sub_category": {
-                    "type": "string",
                     "label": {
                         "ja": "計測法サブカテゴリー",
                         "en": "Method sub-category"
                     },
+                    "type": "string",
                     "default": "X線回折"
                 },
                 "measurement_analysis_field": {
-                    "type": "string",
                     "label": {
                         "ja": "分析分野",
                         "en": "Analysis field"
-                    }
+                    },
+                    "type": "string"
                 },
                 "measurement_measurement_environment": {
-                    "type": "string",
                     "label": {
                         "ja": "測定環境",
                         "en": "Measurement environment"
-                    }
+                    },
+                    "type": "string"
                 },
                 "measurement_energy_level_transition_structure_etc_of_interst": {
-                    "type": "string",
                     "label": {
                         "ja": "対象準位_遷移_構造",
                         "en": "Energy level_transition_structure etc. of interst"
-                    }
+                    },
+                    "type": "string"
                 },
                 "measurement_measured_date": {
-                    "type": "string",
                     "label": {
                         "ja": "分析年月日",
                         "en": "Measured date"
                     },
+                    "type": "string",
                     "format": "date",
                     "options": {
                         "placeholder": {
@@ -116,61 +151,18 @@
                     }
                 },
                 "measurement_standardized_procedure": {
-                    "type": "string",
                     "label": {
                         "ja": "標準手順",
                         "en": "Standardized procedure"
-                    }
+                    },
+                    "type": "string"
                 },
                 "measurement_instrumentation_site": {
-                    "type": "string",
                     "label": {
                         "ja": "装置設置場所",
                         "en": "Instrumentation site"
-                    }
-                },
-                "key1": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー1",
-                        "en": "key1"
-                    }
-                },
-                "key2": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー2",
-                        "en": "key2"
-                    }
-                },
-                "key3": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー3",
-                        "en": "key3"
-                    }
-                },
-                "key4": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー4",
-                        "en": "key4"
-                    }
-                },
-                "key5": {
-                    "type": "string",
-                    "label": {
-                        "ja": "キー5",
-                        "en": "key5"
-                    }
-                },
-                "scanning_mode_if_not_exist": {
-                    "type": "string",
-                    "label": {
-                        "ja": "スキャンモード (ファイルに設定がない場合)",
-                        "en": "Scanning mode (If not exist)"
                     },
-                    "default": "2Theta-Theta"
+                    "type": "string"
                 }
             }
         },
@@ -180,9 +172,6 @@
                 "ja": "試料情報",
                 "en": "Sample Information"
             },
-            "required": [
-                "names"
-            ],
             "properties": {
                 "generalAttributes": {
                     "type": "array",
