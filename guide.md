@@ -14,30 +14,30 @@ XRDの専門家によって監修されたメタ情報を上記ファイルか�
 - マジックネーム対応（データ名を${filename}とすると、ファイル名をデータ名にマッピングする）
 
 ## メタ情報
-- [メタ情報](docs/requirement_analysis/要件定義.xlsx)
+- [メタ情報](docs/rigaku/requirement_analysis/要件定義.xlsx)
 
 ## 基本情報
 
 ### コンテナ情報
-- 【コンテナ名】nims_xrd:v1.3
+- 【コンテナ名】nims_xrd:v1.4
 
 ### テンプレート情報
 - DT0005:
-    - 【データセットテンプレートID】NIMS_DT0005_XRD_RIGAKU_v1.3
+    - 【データセットテンプレートID】NIMS_DT0005_XRD_RIGAKU_v1.4
     - 【データセットテンプレート名日本語】XRD Rigaku データセットテンプレート
     - 【データセットテンプレート名英語】XRD Rigaku dataset-template
     - 【データセットテンプレートの説明】RigakuのXRDをご利用の方に適したモードです。ras/rasx/TXTフォーマットでデータを取得されている方がご利用いただけます。 XRDの専門家によって監修されたメタ情報をras/rasx/TXTファイルから自動的にRDEが抽出します。 プロットはリニアスケールとログスケールを出力します。
-    - 【バージョン】1.3
+    - 【バージョン】1.4
     - 【データセット種別】加工・計測レシピ型
     - 【データ構造化】あり (システム上「あり」を選択)
     - 【取り扱い事業】NIMS研究および共同研究プロジェクト (PROGRAM)
     - 【装置名】(なし。装置情報を紐づける場合はこのテンプレートを複製し、装置情報を設定すること。)
 - DT0009:
-    - 【データセットテンプレートID】NIMS_DT0009_XRD_BRUKER_v1.3
+    - 【データセットテンプレートID】NIMS_DT0009_XRD_BRUKER_v1.4
     - 【データセットテンプレート名日本語】XRD Bruker データセットテンプレート
     - 【データセットテンプレート名英語】XRD Bruker dataset-template
     - 【データセットテンプレートの説明】BrukerのXRDをご利用の方に適したモードです。uxdフォーマットでデータを取得されている方がご利用いただけます。 XRDの専門家によって監修されたメタ情報をuxdファイルから自動的にRDEが抽出します。 プロットはリニアスケールとログスケールを出力します。
-    - 【バージョン】1.3
+    - 【バージョン】1.4
     - 【データセット種別】加工・計測レシピ型
     - 【データ構造化】あり (システム上「あり」を選択)
     - 【取り扱い事業】NIMS研究および共同研究プロジェクト (PROGRAM)
@@ -56,45 +56,24 @@ XRDの専門家によって監修されたメタ情報を上記ファイルか�
 ### レポジトリ構成
 
 ```
-xrd
+XRD
 ├── LICENSE
 ├── README.md
+├── Dockerfile
+├── pyproject.toml
 ├── container
-│   ├── Dockerfile
-│   ├── Dockerfile_nims (NIMSイントラ用)
 │   ├── data (入出力(下記参照))
 │   ├── main.py
-│   ├── modules (ソースコード)
-│   │   └── datasets_process.py (構造化処理の大元)
-│   ├── modules_xrd (ソースコード)
-│   │   ├── factory.py (設定ファイル、使用クラス取得)
-│   │   ├── graph_handler.py (グラフ描画)
-│   │   ├── inputfile_handler.py (入力ファイル読み込み(共通部))
-│   │   ├── interfaces.py
-│   │   ├── invoice_handler.py (送り状上書き)
-│   │   ├── meta_handler.py (メタデータ解析(共通部))
-│   │   ├── models.py
-│   │   ├── rigaku (Rigaku向け)
-│   │   │   ├── ras (rasフォーマット用)
-│   │   │   │   ├── inputfile_handler.py (入力ファイル読み込み)
-│   │   │   │   └── meta_handler.py (メタデータ解析)
-│   │   │   ├── rasx (rasxフォーマット用)
-│   │   │   │   ├── inputfile_handler.py (入力ファイル読み込み)
-│   │   │   │   └── meta_handler.py (メタデータ解析)
-│   │   │   └── txt (TXTフォーマット用)
-│   │   │       ├── inputfile_handler.py (入力ファイル読み込み)
-│   │   │       └── meta_handler.py (メタデータ解析)
-│   │   ├── bruker (Bruker向け)
-│   │   │   ├── uxd (uxdフォーマット用)
-│   │   │   │   ├── inputfile_handler.py (入力ファイル読み込み)
-│   │   │   │   └── meta_handler.py (メタデータ解析)
-│   │   └── structured_handler.py (構造化データ解析)
-│   ├── pip.conf
-│   ├── pyproject.toml
-│   ├── requirements-test.txt
-│   ├── requirements.txt
-│   ├── tests (テストコード)
-│   └── tox.ini
+│   ├── datasets_process.py (構造化処理のスタート)
+│   ├── dynamic_factory.py (設定ファイル、使用クラス取得)
+│   ├── file_formats (ソースコード)
+│   │   ├── file.py (全フォーマット用共通処理)
+│   │   ├── ras_rigaku_file.py (Rigaku rasフォーマット向け構造化処理)
+│   │   ├── rasx_rigaku_file.py (Rigaku rasxフォーマット向け構造化処理)
+│   │   ├── rasx_rigaku_schema.py (Rigaku rasxフォーマット用データ定義)
+│   │   ├── txt_rigaku_file.py (Rigaku txtフォーマット向け構造化処理)
+│   │   └── uxd_bruker_file.py (Bruker uxdフォーマット向け構造化処理)
+│   └── tests (テストコード)
 ├── docs (ドキュメント)
 │   ├── manual (マニュアル)
 │   └── requirement_analysis (要件定義)
@@ -105,6 +84,7 @@ xrd
 │   │   ├── ras_multi_region (rasフォーマット, マルチリージョンデータ)
 │   │   ├── rasx_basic (rasxフォーマット, invoiceモード)
 │   │   ├── rasx_excel_invoice (rasxフォーマット, excelinvoiceモード)
+│   │   ├── txt_smart_table (TXTフォーマット, smarttableモード)
 │   │   ├── txt_space (TXTフォーマット, スペース区切りファイル)
 │   │   └── txt_tab (TXTフォーマット, タブ区切りファイル)
 │   └── bruker (Bruker向け)
@@ -127,6 +107,7 @@ xrd
      │       ├── metadata-def_rigaku_rasx.json (メタデータ定義(rasxフォーマット用))
      │       ├── metadata-def_rigaku_txt_space.json (メタデータ定義(TXTフォーマット(スペース区切り)用))
      │       ├── metadata-def_rigaku_txt_tab.json (メタデータ定義(TXTフォーマット(タブ区切り)用))
+     │       ├── payload_base.json (試料登録用ペイロードファイル)
      │       └── rdeconfig.yaml (設定ファイル)
      └── bruker (Bruker向け)
          ├── batch.yaml
@@ -139,6 +120,7 @@ xrd
              ├── invoice.schema.json (送り状項目定義)
              ├── metadata-def.json (メタデータ定義)
              ├── metadata-def_bruker_uxd.json (メタデータ定義(uxdフォーマット用))
+     │       ├── payload_base.json (試料登録用ペイロードファイル)
              └── rdeconfig.yaml (設定ファイル)
 ```
 
@@ -172,6 +154,7 @@ xrd
 │   │   │   ├── metadata-def_rigaku_txt_space.json
 │   │   │   ├── metadata-def_rigaku_txt_tab.json
 │   │   │   ├── metadata-def_bruker_uxd.json
+│   │   │   ├── payload_base.json
 │   │   │   └── rdeconfig.yaml
 │   │   └── thumbnail
 │   │       └── (サムネイル用)プロット画像
@@ -184,7 +167,8 @@ xrd
 
 ### 動作環境
 - Python: 3.12
-- RDEToolKit: 1.4.2
+- RDEToolKit: 1.7.1
+- RDE-API (smarttableモードによるデータ登録の場合のみ)
 
 ## 入力ファイルから抽出するメタデータを追加(変更)する場合
 - 入力ファイルから抽出するメタデータを追加(変更)する場合、以下のファイルを修正する必要があります。

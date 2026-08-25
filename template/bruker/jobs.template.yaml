@@ -2,9 +2,15 @@ job_specifications:
 - id: ${job-id}
   auto_complete: true
   allow_run_on_missing_image: true
+  max_task_retries: 0
+  environment_variables:
+    RDE_API_ACCESS_TOKEN: ${access-token}
+    ENVNAME: PRD 
+    # ENVNAME: STG
   tasks:
   - id: task_1
-    docker_image: nims_mdpf_shared_xrd:v1.3
+    docker_image: rdecontreg.azurecr.io/nims/mdpf_shared/nims_mdpf_shared_xrd:v1.4
+    # docker_image: stgrdecontreg.azurecr.io/nims/mdpf_shared/nims_mdpf_shared_xrd:v1.3.25
     input_data:
       azure_storage:
       - storage_account_settings: mystorageaccount

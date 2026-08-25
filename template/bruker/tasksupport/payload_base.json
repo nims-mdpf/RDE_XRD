@@ -1,0 +1,29 @@
+{
+  "data": {
+    "type": "sample",
+    "attributes": {
+      "description": null,
+      "composition": null,
+      "referenceUrl": null,
+      "hideOwner": false,
+      "names": [],
+      "relatedSamples": [],
+      "tags": [],
+      "generalAttributes":[]
+    },
+    "relationships": {
+      "owningGroup": {
+        "data": {
+          "type": "group",
+          "id": null
+        }
+      },
+      "owner": {
+        "data": {
+          "type": "user",
+          "id": null
+        }
+      }
+    }
+  }
+}

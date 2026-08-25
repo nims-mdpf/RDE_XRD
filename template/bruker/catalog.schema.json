@@ -1,106 +1,126 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://rde.nims.go.jp/rde/dataset-templates/RDEDatasetTemplateSheet_RDE_XRD_bruker/catalog.schema.json",
+    "$id": "https://rde.nims.go.jp/rde/dataset-templates/NIMS_BRUKER_XRD_catalog/catalog.schema.json",
     "type": "object",
     "required": [
         "catalog"
     ],
-    "description": "標準データセットテンプレートRDE_XRDのbruker用RDEデータセットテンプレート: データカタログ定義",
     "properties": {
         "catalog": {
             "type": "object",
             "label": {
-                "ja": "RDEDatasetTemplateSheet_RDE_XRD_bruker:データカタログ定義",
-                "en": "RDEDatasetTemplateSheet_RDE_XRD_bruker:data catalog format"
+                "ja": "データカタログ",
+                "en": "Data Catalog"
             },
-            "required": [],
             "properties": {
                 "dataset_title": {
+                    "type": "string",
                     "label": {
                         "ja": "データセット名",
                         "en": "Dataset Title"
                     },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "abstract": {
                     "type": "string",
-                    "examples": "dtaset_title"
+                    "label": {
+                        "ja": "概要",
+                        "en": "Abstract"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
                 },
                 "data_creator": {
+                    "type": "string",
                     "label": {
                         "ja": "作成者",
                         "en": "Data Creator"
                     },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
+                },
+                "language": {
                     "type": "string",
-                    "examples": "data_creator"
+                    "label": {
+                        "ja": "言語",
+                        "en": "Language"
+                    },
+                    "options": {
+                        "widget": "textarea",
+                        "rows": 3
+                    }
                 },
                 "experimental_apparatus": {
+                    "type": "string",
                     "label": {
                         "ja": "使用装置",
                         "en": "Experimental Apparatus"
                     },
-                    "type": "string",
-                    "examples": "experimental_apparatus",
                     "options": {
                         "widget": "textarea",
-                        "rows": 2
+                        "rows": 10
                     }
                 },
                 "data_distribution": {
+                    "type": "string",
                     "label": {
                         "ja": "データの再配布",
                         "en": "Data Distribution"
                     },
-                    "type": "string",
-                    "examples": "data_distribution",
                     "options": {
                         "widget": "textarea",
-                        "rows": 5
+                        "rows": 3
                     }
                 },
                 "raw_data_type": {
+                    "type": "string",
                     "label": {
                         "ja": "データの種類",
                         "en": "Raw Data Type"
                     },
-                    "type": "string",
-                    "examples": "raw_data_type",
                     "options": {
                         "widget": "textarea",
                         "rows": 5
                     }
                 },
                 "stored_data": {
+                    "type": "string",
                     "label": {
                         "ja": "格納データ",
                         "en": "Stored Data"
                     },
-                    "type": "string",
-                    "examples": "stored_data",
                     "options": {
                         "widget": "textarea",
-                        "rows": 5
+                        "rows": 20
                     }
                 },
                 "remarks": {
+                    "type": "string",
                     "label": {
                         "ja": "備考",
                         "en": "Remarks"
                     },
-                    "type": "string",
-                    "examples": "remarks",
                     "options": {
                         "widget": "textarea",
-                        "rows": 5
+                        "rows": 3
                     }
                 },
                 "references": {
+                    "type": "string",
                     "label": {
-                        "ja": "参考文献",
+                        "ja": "参考論文",
                         "en": "References"
                     },
-                    "type": "string",
-                    "examples": "references",
                     "options": {
                         "widget": "textarea",
-                        "rows": 5
+                        "rows": 3
                     }
                 }
             }

@@ -1,0 +1,32 @@
+Sample	202401_MS99
+Comments	 
+Filename	C:\Data\Xrd\2020\202401\202401_MS99_2É∆_É∆.raw
+Goniometer	MiniFlex 300/600 +
+Attachment	ïWèÄééóøë‰
+Monochromater	None
+X	0
+Y	0
+Z	0
+ScanningMode	2Theta/Theta
+ScanningType	Continuos Scanning
+X-Ray	30kV/10mA
+IHS	10.0mm
+DS	0.625deg
+SS	8.0mm
+RS	13.0mm(Open)
+None	
+Start	10
+Stop	60
+Step	0.01
+Speed	3
+Offset	0
+TempUnit	Celsius
+StartTime	2024/01/31	14:38:41
+StartTemp	0
+StopTime	2024/01/31	14:57:15
+StopTemp	0
+10	2740
+10.01	2700
+10.02	2740
+10.03	2705
+10.04	2645

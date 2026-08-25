@@ -1,5 +1,9 @@
 # 更新履歴
 
+## 2026/08/25 更新
+- RDEToolKit v1.7対応
+- SmartTable対応
+
 ## 2026/01/06 データセットテンプレートシート追加
 - docs/manualにデータセットテンプレートシートを追加
 - docs/manual/index.mdに説明を追加

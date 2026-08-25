@@ -609,8 +609,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "mA",
         "mode": "txt形式",
+        "unit": "mA",
         "variable": 1
     },
     "txt.x-ray_tube_voltage": {
@@ -621,8 +621,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "kV",
         "mode": "txt形式",
+        "unit": "kV",
         "variable": 1
     },
     "txt.scan_axis": {
@@ -679,8 +679,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "deg/min",
         "mode": "txt形式",
+        "unit": "deg/min",
         "variable": 1
     },
     "txt.scan_step_size": {
@@ -691,8 +691,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "deg",
         "mode": "txt形式",
+        "unit": "deg",
         "variable": 1
     },
     "txt.scan_starting_position": {
@@ -703,8 +703,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "deg",
         "mode": "txt形式",
+        "unit": "deg",
         "variable": 1
     },
     "txt.scan_ending_position": {
@@ -715,8 +715,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "deg",
         "mode": "txt形式",
+        "unit": "deg",
         "variable": 1
     },
     "txt.attachment": {
@@ -749,8 +749,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "deg",
         "mode": "txt形式",
+        "unit": "deg",
         "variable": 1
     },
     "txt.diffractedbeampath_anti-scatter_slit_width": {
@@ -761,8 +761,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "mm",
         "mode": "txt形式",
+        "unit": "mm",
         "variable": 1
     },
     "txt.diffractedbeampath_receiving_slit_width": {
@@ -773,8 +773,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "mm",
         "mode": "txt形式",
+        "unit": "mm",
         "variable": 1
     },
     "txt.incidenting_slit": {
@@ -785,8 +785,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "deg",
         "mode": "txt形式",
+        "unit": "deg",
         "variable": 1
     },
     "txt.receiving_slit_1": {
@@ -797,8 +797,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "mm",
         "mode": "txt形式",
+        "unit": "mm",
         "variable": 1
     },
     "txt.receiving_slit_2": {
@@ -809,8 +809,8 @@
         "schema": {
             "type": "number"
         },
-        "unit": "mm",
         "mode": "txt形式",
+        "unit": "mm",
         "variable": 1
     },
     "main_image_setting": {

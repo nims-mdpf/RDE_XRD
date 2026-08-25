@@ -50,6 +50,7 @@ XRDの専門家によって監修されたメタ情報をデータファイル�
     |データ型|文字列|文字列|文字列|固定(.ras/.rasx)|
     |例）xrd_sto001.ras|xrd|sto001|***|ras|
     |例）rasx_sto001_2Theta_omega.rasx|rasx|sto001|2Theta_omega|rasx|
+- このテンプレートは、smarttableモードによるデータ登録の場合のみ、RDE-APIを使用しています。
 
 ### 構造化ファイル
 
@@ -95,7 +96,7 @@ XRDの専門家によって監修されたメタ情報をデータファイル�
 |measurement_analysis_field||分析分野|Analysis field|||string|||
 |measurement_measurement_environment||測定環境|Measurement environment|||string|||
 |measurement_energy_level_transition_structure_etc_of_interst||対象準位_遷移_構造|Energy level_transition_structure etc. of interst|||string|||
-|measurement_measured_date||分析年月日|Measured date|||string||データファイルから自動取得 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_START_TIME</td></tr><tr><td>.rasx</td><td>rasx.scan_starting_date_time</td></tr><tr><td>.TXT</td><td>StartTime</td></tr><tr><td>.uxd</td><td>;content of</td></tr></tbody></table>|
+|measurement_measured_date||分析年月日|Measured date|||string||データファイルから自動取得 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_START_TIME</td></tr><tr><td>.rasx</td><td>rasx.scan_starting_date_time</td></tr><tr><td>.TXT</td><td>StartTime</td></tr><tr><td>.uxd</td><td>_DATEMEASURED</td></tr></tbody></table>|
 |measurement_standardized_procedure||標準手順|Standardized procedure|||string|||
 |measurement_instrumentation_site||装置設置場所|Instrumentation site|||string|||
 |key1||キー1|key1|||string||汎用項目|
@@ -194,13 +195,13 @@ XRDの専門家によって監修されたメタ情報をデータファイル�
 | system | extended_mode | 動作モード | string | (なし) | データファイル一括投入時'MultiDataTile'を設定 |
 | system | magic_variable | マジックネーム | string | 'true' | ファイル名 = データ名としない場合は'false'に設定 |
 | system | save_thumbnail_image | サムネイル画像保存  | string | 'true' | |
-| - | filename_mapping_rule | ファイル名マッピング規則  | string |'true'| ファイル名からメタデータの一部を取得しない場合'false'に設定 |
-| - | manufacturer | 装置メーカー名 | string | 'rigaku' or 'bruker' | |
-| - | main_image_setting | 代表画像のグラフスケール | string | (なし) | メイングラフ画像を対数目盛(Logarithmic Scale)に設定する場合'log'を設定 |
-| - | meas_scan_axis_x | x軸ラベル(名称)   | string | (なし) | 空白の場合、メタデータの'スキャン軸'の値を設定 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_AXIS_X</td></tr><tr><td>.rasx</td><td>AxisName</td></tr><tr><td>.TXT</td><td>ScanningMode</td></tr><tr><td>.uxd</td><td>プロット画像元データ(*.csv)のヘッダー</td></tr></tbody></table>|
-| - | meas_scan_unit_x | x軸ラベル(単位) | string | (なし) | 空白の場合、メタデータの'スキャン軸の単位'の値を設定 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_UNIT_X</td></tr><tr><td>.rasx</td><td>PositionUnit</td></tr><tr><td>.TXT</td><td>(なし)</td></tr><tr><td>.uxd</td><td>(なし)</td></tr></tbody></table>|
-| - | meas_scan_axis_y | y軸ラベル(名称)   | string | (なし) | 空白の場合、'Intensity'を設定 |
-| - | meas_scan_unit_y | y軸ラベル(単位) | string | (なし) | 空白の場合、メタデータの'強度の単位'の値を設定 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_UNIT_Y</td></tr><tr><td>.rasx</td><td>IntensityUnit</td></tr><tr><td>.TXT</td><td>(なし)</td></tr><tr><td>.uxd</td><td>(なし)</td></tr></tbody></table>|
+| xrd | filename_mapping_rule | ファイル名マッピング規則  | string |'true'| ファイル名からメタデータの一部を取得しない場合'false'に設定 |
+| xrd | manufacturer | 装置メーカー名 | string | 'rigaku' or 'bruker' | |
+| xrd | main_image_setting | 代表画像のグラフスケール | string | (なし) | メイングラフ画像を対数目盛(Logarithmic Scale)に設定する場合'log'を設定 |
+| xrd | meas_scan_axis_x | x軸ラベル(名称)   | string | (なし) | 空白の場合、メタデータの'スキャン軸'の値を設定 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_AXIS_X</td></tr><tr><td>.rasx</td><td>AxisName</td></tr><tr><td>.TXT</td><td>ScanningMode</td></tr><tr><td>.uxd</td><td>プロット画像元データ(*.csv)のヘッダー</td></tr></tbody></table>|
+| xrd | meas_scan_unit_x | x軸ラベル(単位) | string | (なし) | 空白の場合、メタデータの'スキャン軸の単位'の値を設定 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_UNIT_X</td></tr><tr><td>.rasx</td><td>PositionUnit</td></tr><tr><td>.TXT</td><td>(なし)</td></tr><tr><td>.uxd</td><td>(なし)</td></tr></tbody></table>|
+| xrd | meas_scan_axis_y | y軸ラベル(名称)   | string | (なし) | 空白の場合、'Intensity'を設定 |
+| xrd | meas_scan_unit_y | y軸ラベル(単位) | string | (なし) | 空白の場合、メタデータの'強度の単位'の値を設定 <table><thead><tr><th>フォーマット</th><th>メタデータ項目</th></tr></thead><tbody><tr><td>.ras</td><td>MEAS_SCAN_UNIT_Y</td></tr><tr><td>.rasx</td><td>IntensityUnit</td></tr><tr><td>.TXT</td><td>(なし)</td></tr><tr><td>.uxd</td><td>(なし)</td></tr></tbody></table>|
 
 ### dataset関数の説明
 
@@ -230,8 +231,11 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
 
 - 設定ファイルの設定項目については、[こちら](#設定ファイルの説明) を参照
 ```python
+    region_num: int = 1
+    # Get config
+    config, processing_file = DynamicFactory.get_config(resource_paths, srcpaths.tasksupport)
     # Get the class to use
-    config, metadata_def, module = XrdFactory.get_objects(resource_paths.rawfiles[0], srcpaths.tasksupport)
+    metadata_def, module = DynamicFactory.get_objects(processing_file, srcpaths.tasksupport, config)
 ```
 
 ### 計測ファイル(ras/rasx/TXT/uxdファイル)読み込み
@@ -243,7 +247,6 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
     compressd_files: List[str] = []
     # Read Input File -> Save Meta -> Struct
     for data, meta in module.file_reader.read(resource_paths.rawfiles[0]):
-        compressd_files = []
         region_num = module.file_reader.get_region_number()
 
         # Get meta
@@ -257,11 +260,12 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
 - rasxファイルはzipの展開処理を行い、アーカイブされていた各種ファイルを保存する。
 ```python
         # Save csv
+        module.structured_processor.save_csv(resource_paths, processing_file, data, region_num=region_num)
         # Execute save process for structured files, only when a .rasx file is input,
         # as there are other files(xml, txt) compressed.
-        if resource_paths.rawfiles[0].suffix == ".rasx":
-            compressd_files = module.file_reader.get_files_from_rasx(resource_paths.rawfiles[0])
-        module.structured_processer.save_csv(resource_paths, data, compressd_files, region_num=region_num)
+        if processing_file.suffix == ".rasx":
+            compressd_files = module.file_reader.get_files_from_rasx(processing_file)
+            module.structured_processor.save_structured_contents(resource_paths, processing_file, compressd_files)
 ```
 
 ### 計測ファイルの構造化データグラフ化
@@ -270,7 +274,7 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
 - グラフスケールの種類とリージョン数によって、グラフタイトル、グラフスケール、保存先が変わる。
 ```python
         # Plot
-        module.graph_plotter.plot_main(data, resource_paths, region_num)
+        module.graph_plotter.plot_main(data, resource_paths, processing_file, region_num)
 ```
 
 ### 送り状（invoice.json）の分析年月日を上書き
@@ -279,12 +283,7 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
 ```python
         # Overwrite invoice if needed
         # (sample/sampleId,names, custom/measurement_measured_date)
-        invoice_org_obj = module.meta_parser.overwrite_invoice_if_needed(
-            resource_paths,
-            const_meta,
-            repeat_meta,
-            srcpaths.tasksupport.joinpath("filename_mapping_rule.txt")
-        )
+        module.invoice_writer.overwrite_invoice_measured_date(resource_paths, processing_file.suffix, const_meta, repeat_meta)
 ```
 
 ### メタデータを保存
@@ -307,27 +306,7 @@ def dataset(srcpaths: RdeInputDirPaths, resource_paths: RdeOutputResourcePath) -
 ```python
     # Plot
     # Integrated graph image if needed
-    if region_num == 2:
-        module.graph_plotter.multiplot_main(resource_paths)
+    multi_resion_num: Final[int] = 2
+    if region_num == multi_resion_num:
+        module.graph_plotter.multiplot_main(resource_paths, processing_file)
 ```
-
-### 送り状（invoice.json）の試料情報を上書き
-
-- コンフィグファイルの項目:`filename_mapping_rule`が`True`の場合、ras/rasxファイル名から試料IDと試料名を抽出し、送り状`invoice.json`の同項目に設定する。
-```python
-    # Overwrite invoice
-    # (sample/sampleId, names)
-    module.invoice_writer.overwrite_invoice_sample_name(resource_paths)
-```
-
-## データセットテンプレートシートについて
-
-　メタデータ定義(metadata-def.json)、送状定義(invoice.schema.json)、カタログ定義(catalog.schema.json)をエクセル形式のシートから生成することができるツールを以下に用意してあります。
-
-[RDE/データセットテンプレート生成、確認ツール](https://github.com/nims-mdpf/RDE_datasettemplate-schemafile-make-tool)
-
-　上記のツールで利用可能な本データセットテンプレート用のデータセットテンプレートシートは以下の通りです。
-
-- [templates/bruker用](./RDEDatasetTemplateSheet_RDE_XRD_bruker.xlsx)
-- [templates/rigaku用](./RDEDatasetTemplateSheet_RDE_XRD_rigaku.xlsx)
-
